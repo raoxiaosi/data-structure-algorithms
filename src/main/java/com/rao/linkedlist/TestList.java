@@ -19,6 +19,19 @@ public class TestList {
         list.addSortByNo(new SingleLinkedListNode(5, "EE"));
         list.addSortByNo(new SingleLinkedListNode(5, "FF"));
         list.list();
+        System.out.println("链表长度为:" + list.size());
+        System.out.println("--------------");
+
+//        list.update(new SingleLinkedListNode(8, "DHUIASHDIUS"));
+//        list.delete(2);
+//        list.delete(3);
+//        list.delete(1);
+//        list.delete(8);
+
+        list.reverse();
+        list.list();
+        System.out.println("链表长度为:" + list.size());
     }
-    
+
+
 }

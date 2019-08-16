@@ -10,6 +10,7 @@ import lombok.*;
  */
 @Getter
 @Setter
+@NoArgsConstructor
 public class SingleLinkedListNode {
     
     private Integer no;
