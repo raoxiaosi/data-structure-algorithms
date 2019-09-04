@@ -26,6 +26,13 @@ public class TestSort {
     }
 
     @Test
+    public void testInsertSort(){
+        System.out.println(dateFormat.format(new Date()));
+        InsertSort.sort(arr, OrderDirectionEnum.DESC);
+        System.out.println(dateFormat.format(new Date()));
+    }
+
+    @Test
     public void testSelectSort(){
         System.out.println(dateFormat.format(new Date()));
         SelectSort.sort(arr, OrderDirectionEnum.DESC);
