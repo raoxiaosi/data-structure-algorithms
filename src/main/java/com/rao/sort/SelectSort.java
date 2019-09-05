@@ -1,6 +1,7 @@
 package com.rao.sort;
 
 import com.rao.common.constant.OrderDirectionEnum;
+import com.rao.util.DirectionUtil;
 
 import java.util.Arrays;
 
@@ -19,21 +20,9 @@ public class SelectSort {
             minIndex = i;
 
             for(int j = i + 1; j < arr.length; j ++){
-                switch (direction){
-                    case DESC:
-                        if(min < arr[j]){
-                            min = arr[j];
-                            minIndex = j;
-                        }
-                        break;
-                    case ASC:
-                        if(min > arr[j]){
-                            min = arr[j];
-                            minIndex = j;
-                        }
-                        break;
-                    default:
-                        break;
+                if(DirectionUtil.judgeDirection(arr[j], min, direction)){
+                    min = arr[j];
+                    minIndex = j;
                 }
             }
 
@@ -42,10 +31,6 @@ public class SelectSort {
                 arr[i] = min;
             }
         }
-    }
-
-    public static void main(String[] args) {
-
     }
 
 }

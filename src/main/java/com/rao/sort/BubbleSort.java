@@ -1,6 +1,7 @@
 package com.rao.sort;
 
 import com.rao.common.constant.OrderDirectionEnum;
+import com.rao.util.DirectionUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -24,36 +25,18 @@ public class BubbleSort {
         for(int i = 0; i < arr.length - 1; i++){
             flag = true;
             for(int j = 0; j < arr.length - 1 - i; j++){
-                switch (direction){
-                    case ASC:
-                        // 升序
-                        if(arr[j] > arr[j+1]){
-                            temp = arr[j];
-                            arr[j] = arr[j+1];
-                            arr[j+1] = temp;
+                if(DirectionUtil.judgeDirection(arr[j + 1], arr[j], direction)){
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
 
-                            flag = false;
-                        }
-                        break;
-                    case DESC:
-                        // 降序
-                        if(arr[j] < arr[j+1]){
-                            temp = arr[j+1];
-                            arr[j+1] = arr[j];
-                            arr[j] = temp;
-
-                            flag = false;
-                        }
-                        break;
-                    default:
-                        break;
+                    flag = false;
                 }
-                
             }
             if(flag){
                 break;
             }
         }
     }
-    
+
 }
