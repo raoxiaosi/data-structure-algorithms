@@ -26,6 +26,20 @@ public class TestSort {
     }
 
     @Test
+    public void testShellMoveSort(){
+        System.out.println(dateFormat.format(new Date()));
+        ShellMoveSort.sort(arr, OrderDirectionEnum.DESC);
+        System.out.println(dateFormat.format(new Date()));
+    }
+
+    @Test
+    public void testShellSwapSort(){
+        System.out.println(dateFormat.format(new Date()));
+        ShellSwapSort.sort(arr, OrderDirectionEnum.DESC);
+        System.out.println(dateFormat.format(new Date()));
+    }
+
+    @Test
     public void testInsertSort(){
         System.out.println(dateFormat.format(new Date()));
         InsertSort.sort(arr, OrderDirectionEnum.DESC);
